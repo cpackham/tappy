@@ -1,10 +1,30 @@
 """
 TAP producer for Python unittest framework
 
+This provides test runner and test result class that together produce
+TAP compliant output, see http://testanything.org/ for more info on the
+TAP format.
+
 Usage in test script:
 
     if __name__ == "__main__":
         unittest.main(testRunner=tappy.TapTestRunner)
+
+---
+
+Copyright (c) 2011 Chris Packham
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License version 2 as
+published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 import unittest
