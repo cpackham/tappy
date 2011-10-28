@@ -1,15 +1,6 @@
 """
 TAP producer for Python unittest framework
 
-This provides test runner and test result class that together produce
-TAP compliant output, see http://testanything.org/ for more info on the
-TAP format.
-
-Usage in test script:
-
-    if __name__ == "__main__":
-        unittest.main(testRunner=tappy.TapTestRunner)
-
 ---
 
 Copyright (c) 2011 Chris Packham
@@ -29,12 +20,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import unittest
 import sys
-import time
 
 class TapTestResult(unittest.TestResult):
-    """A test result class that produces TAP compliant output.
-    
-    Used by TapTestRunner."""
+    """A test result class that produces TAP compliant output."""
 
     def __init__(self, stream, descriptions, verbosity):
         super(TapTestResult, self).__init__()
@@ -42,7 +30,6 @@ class TapTestResult(unittest.TestResult):
 
     def startTest(self, test):
         super(TapTestResult, self).startTest(test)
-        self.startTime = time.time()
 
     def addSuccess(self, test):
         super(TapTestResult, self).addSuccess(test)
