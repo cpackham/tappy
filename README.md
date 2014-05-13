@@ -28,3 +28,7 @@ Instead of typing:
 You can type:
 
     python -m tappy
+
+See also
+--------
+* https://github.com/mblayman/tappy
