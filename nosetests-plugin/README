@@ -7,7 +7,7 @@ Add this shell command to your builder ::
 By default, a file named nosetests.tap will be written to the
 working directory.
 
-Copyright (c) 2011 Chris Packham and Tobi Wulff
+Copyright (c) 2011-2014 Chris Packham and Tobi Wulff
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License version 2 as

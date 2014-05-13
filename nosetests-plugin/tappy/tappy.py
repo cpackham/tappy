@@ -100,9 +100,12 @@ class Tappy(Plugin):
         self.__addDiagnostics(self.__formatErr(err))
 
     def addError(self, test, err):
-        self.tapOutput.append("not ok %d - %s" % (self.testsRun, str(test)))
-        self.tapOutput.append("# ERROR:")
-        self.__addDiagnostics(self.__formatErr(err))
+        if issubclass(err[0], SkipTest):
+            self.tapOutput.append("ok %d - %s # skip %s" % (self.testsRun, str(test), err[1]))
+        else:
+            self.tapOutput.append("not ok %d - %s" % (self.testsRun, str(test)))
+            self.tapOutput.append("# ERROR:")
+            self.__addDiagnostics(self.__formatErr(err))
 
     def addExpectedFailure(self, test, err):
         self.tapOutput.append("not ok %d - %s # TODO known breakage" % (self.testsRun, str(test)))
